@@ -1,28 +1,30 @@
-Instruções para entrega
+function calcularRankeadas(vitorias, derrotas) {
+    let saldoVitorias = vitorias - derrotas;
+    let nivel;
 
-# 1️⃣ Desafio Classificador de nível de Herói
+    if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
+    }
 
-**O Que deve ser utilizado**
+    return `O Herói tem de saldo de ${saldoVitorias} está no nível de ${nivel}`;
+}
 
-- Variáveis
-- Operadores
-- Laços de repetição
-- Estruturas de decisões
+let vitorias = 30;  // Defina o número de vitórias
+let derrotas = 15;  // Defina o número de derrotas
 
-## Objetivo
+let resultado = calcularRankeadas(vitorias, derrotas);
 
-Crie uma variável para armazenar o nome e a quantidade de experiência (XP) de um herói, depois utilize uma estrutura de decisão para apresentar alguma das mensagens abaixo:
+console.log(resultado);
 
-Se XP for menor do que 1.000 = Ferro
-Se XP for entre 1.001 e 2.000 = Bronze
-Se XP for entre 2.001 e 5.000 = Prata
-Se XP for entre 5.001 e 7.000 = Ouro
-Se XP for entre 7.001 e 8.000 = Platina
-Se XP for entre 8.001 e 9.000 = Ascendente
-Se XP for entre 9.001 e 10.000= Imortal
-Se XP for maior ou igual a 10.001 = Radiante
-
-## Saída
-
-Ao final deve se exibir uma mensagem:
-"O Herói de nome **{nome}** está no nível de **{nivel}**"
